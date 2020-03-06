@@ -28,7 +28,8 @@ struct bwServerView: View {
                     .font(.callout)
                     .bold()
                 TextField("Bitrate en kb/s", text: $bitrate).textFieldStyle(RoundedBorderTextFieldStyle())
-                if nblisteners.isnumeric && bitrate.isnumeric { Text("Server bandwidth (Mib/s): " + String(bwServer(Float(nblisteners)!, Float(bitrate)!))).font(.subheadline).bold()
+                if nblisteners.isnumeric && bitrate.isnumeric {
+                    Text("Server bandwidth (Mib/s): " + String(bwServer(Float(nblisteners)!, Float(bitrate)!))).font(.subheadline).bold()
                 }
         }
     }
