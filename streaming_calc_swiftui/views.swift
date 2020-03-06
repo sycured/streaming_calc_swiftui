@@ -14,20 +14,23 @@ extension String {
     }
 }
 
+let nol = "Number of listeners"
+let bekb = "Bitrate en kb/s"
+
 struct bwServerView: View {
     @State var nblisteners: String = ""
     @State var bitrate: String = ""
 
     var body: some View {
             VStack(alignment: .leading) {
-                Text("Number of listeners")
+                Text(nol)
                     .font(.callout)
                     .bold()
-                TextField("Number of listeners", text: $nblisteners).textFieldStyle(RoundedBorderTextFieldStyle())
-                Text("Bitrate en kb/s")
+                TextField(nol, text: $nblisteners).textFieldStyle(RoundedBorderTextFieldStyle())
+                Text(bekb)
                     .font(.callout)
                     .bold()
-                TextField("Bitrate en kb/s", text: $bitrate).textFieldStyle(RoundedBorderTextFieldStyle())
+                TextField(bekb, text: $bitrate).textFieldStyle(RoundedBorderTextFieldStyle())
                 if nblisteners.isnumeric && bitrate.isnumeric {
                     Text("Server bandwidth (Mib/s): " + String(bwServer(Float(nblisteners)!, Float(bitrate)!))).font(.subheadline).bold()
                 }
@@ -43,14 +46,14 @@ struct serverUsageBwView: View {
 
     var body: some View {
             VStack(alignment: .leading) {
-                Text("Number of listeners")
+                Text(nol)
                     .font(.callout)
                     .bold()
-                TextField("Number of listeners", text: $nblisteners).textFieldStyle(RoundedBorderTextFieldStyle())
-                Text("Bitrate en kb/s")
+                TextField(nol, text: $nblisteners).textFieldStyle(RoundedBorderTextFieldStyle())
+                Text(bekb)
                     .font(.callout)
                     .bold()
-                TextField("Bitrate en kb/s", text: $bitrate).textFieldStyle(RoundedBorderTextFieldStyle())
+                TextField(bekb, text: $bitrate).textFieldStyle(RoundedBorderTextFieldStyle())
                 Text("Number of days")
                     .font(.callout)
                     .bold()
