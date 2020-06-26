@@ -9,8 +9,8 @@
 import SwiftUI
 
 extension String {
-    var isnumeric: Bool {
-        return !isEmpty && range(of: "[^0-9]", options: .regularExpression) == nil
+    var isfloat: Bool {
+        return !isEmpty && range(of: "[^0-9.]", options: .regularExpression) == nil
     }
 }
 
@@ -31,7 +31,7 @@ struct bwServerView: View {
                     .font(.callout)
                     .bold()
                 TextField(bekb, text: $bitrate).textFieldStyle(RoundedBorderTextFieldStyle())
-                if nblisteners.isnumeric && bitrate.isnumeric {
+                if nblisteners.isfloat && bitrate.isfloat {
                     Text("Server bandwidth (Mib/s): " + String(bwServer(Float(nblisteners)!, Float(bitrate)!))).font(.subheadline).bold()
                 }
         }
@@ -62,7 +62,7 @@ struct serverUsageBwView: View {
                     .font(.callout)
                     .bold()
                 TextField("Number of hours by day", text: $nbhours).textFieldStyle(RoundedBorderTextFieldStyle())
-                if nblisteners.isnumeric && bitrate.isnumeric && nbdays.isnumeric && nbhours.isnumeric {
+                if nblisteners.isfloat && bitrate.isfloat && nbdays.isfloat && nbhours.isfloat {
                     Text("Bandwidth used (GiB): " + String(serverUsageBw(Float(nblisteners)!, Float(bitrate)!, Float(nbdays)!, Float(nbhours)!))).font(.subheadline).bold()
                 }
         }
