@@ -7,9 +7,9 @@
 //
 
 func bwServer(_ nblisteners: Float, _ bitrate: Float) -> Float {
-    nblisteners * bitrate * 1000 / 1024
+    125 * nblisteners * bitrate / 128
 }
 
 func serverUsageBw(_ nblisteners: Float, _ bitrate: Float, _ nbdays: Float, _ nbhours: Float) -> Float {
-    nbdays * nbhours * 3600 * bitrate * 1000 / 8 * nblisteners / 1024 / 1024
+    28125 * nbdays * nbhours * bitrate * nblisteners / 65536
 }
