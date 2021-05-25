@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "SwiftValidators",
+        "repositoryURL": "https://github.com/gkaimakas/SwiftValidators",
+        "state": {
+          "branch": "master",
+          "revision": "773f37a2e756e8c54af008b7c02efb062b8759ab",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}
